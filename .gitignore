@@ -341,4 +341,4 @@ public/app/**/*.map
 jspm_packages
 
 # Ignore config file
-config.js
+config/main.js

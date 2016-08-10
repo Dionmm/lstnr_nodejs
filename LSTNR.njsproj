@@ -31,7 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="config.js" />
+    <Compile Include="config\main.js" />
+    <Compile Include="config\passport.js" />
+    <Compile Include="models\user.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\playlists.js" />
     <Compile Include="routes\songs.js" />
@@ -46,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="models\" />
+    <Folder Include="config\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
@@ -64,6 +68,8 @@
     <Folder Include="typings\globals\mongoose\" />
     <Folder Include="typings\globals\morgan\" />
     <Folder Include="typings\globals\node\" />
+    <Folder Include="typings\globals\passport-jwt\" />
+    <Folder Include="typings\globals\passport\" />
     <Folder Include="typings\globals\serve-favicon\" />
     <Folder Include="typings\globals\stylus\" />
     <Folder Include="views\" />
@@ -80,6 +86,8 @@
     <TypeScriptCompile Include="typings\globals\mongoose\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\passport-jwt\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\passport\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\serve-favicon\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\stylus\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />

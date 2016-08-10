@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const mongodb = require('mongodb');
 const mongoose = require('mongoose');
 
-const config = require('./config');
+const config = require('./config/main');
 const routes = require('./routes/index');
 const users = require('./routes/users');
 const songs = require('./routes/songs');
@@ -40,7 +40,7 @@ db.once('open', function(){
 
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/api/users', users);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
