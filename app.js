@@ -6,6 +6,8 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const mongodb = require('mongodb');
+const mongoose = require('mongoose');
 
 const config = require('./config');
 const routes = require('./routes/index');
@@ -14,12 +16,12 @@ const songs = require('./routes/songs');
 const playlists = require('./routes/playlists');
 
 const app = express();
+const dbString = config.database;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -27,6 +29,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Connect to Database
+mongoose.connect(dbString);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function(){
+    console.log("We're in boss");
+});
+
 
 app.use('/', routes);
 app.use('/users', users);
