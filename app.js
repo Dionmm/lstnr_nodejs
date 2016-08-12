@@ -14,6 +14,7 @@ const routes = require('./routes/index');
 const users = require('./routes/users');
 const songs = require('./routes/songs');
 const playlists = require('./routes/playlists');
+const youtube = require('./helpers/youtube');
 
 const app = express();
 const dbString = config.database;
@@ -37,6 +38,11 @@ db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', function(){
     console.log("We're in boss");
 });
+
+//Set Youtube API Key
+youtube.APIKey = 'AIzaSyBWaFgKjAgeblkrWqWKPKeaKAhdbZvQTkE';
+
+youtube.search('prince');
 
 
 app.use('/', routes);
