@@ -3,27 +3,21 @@
 const request = require('request');
 const queryString = require('querystring');
 
-class Youtube {
+class Spotify {
 	constructor(){
-		this.url = 'https://www.googleapis.com/youtube/v3/'
+		this.url = 'https://api.spotify.com/v1/'
 		this.params = {
-			type: 'video',
-			videoSyndicated: true
+			type: 'track'
 		};
 	}
 
-	set APIKey(apiKey){
-		this.params['key'] = apiKey;
-	}
-
-	search(query, part, limit){
-		part = part || 'snippet';
+	search(query, limit){
 		limit = limit || 1;
 
-		this.params['part'] = part;
 		this.params['q'] = query;
-		this.params['maxResults'] = limit;
+		this.params['limit'] = limit;
 
+		console.log(this.url + 'tracks?' + queryString.stringify(this.params));
 		return this._makeRequest(this.url + 'search?' + queryString.stringify(this.params));
 
 	}
@@ -45,4 +39,4 @@ class Youtube {
 
 }
 
-module.exports = new Youtube;
+module.exports = new Spotify;

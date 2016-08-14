@@ -42,11 +42,9 @@ db.once('open', function(){
 //Set Youtube API Key
 youtube.APIKey = 'AIzaSyBWaFgKjAgeblkrWqWKPKeaKAhdbZvQTkE';
 
-youtube.search('prince');
-
-
 app.use('/', routes);
 app.use('/api/users', users);
+app.use('/api/songs', songs);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
