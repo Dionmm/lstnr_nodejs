@@ -4,7 +4,6 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const passport = require('passport');
 
 const secret = require('../config/main').secret;
 const User = require("../models/user");
@@ -13,9 +12,6 @@ const router = express.Router();
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: false}));
-
-router.use(passport.initialize());
-require('../config/passport')(passport);
 
 router.get('/', (req, res) => {
     res.json({ success: true });
