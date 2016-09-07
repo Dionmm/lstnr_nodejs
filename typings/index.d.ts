@@ -11,5 +11,6 @@
 /// <reference path="globals/node/index.d.ts" />
 /// <reference path="globals/passport-jwt/index.d.ts" />
 /// <reference path="globals/passport/index.d.ts" />
+/// <reference path="globals/request/index.d.ts" />
 /// <reference path="globals/serve-favicon/index.d.ts" />
 /// <reference path="globals/stylus/index.d.ts" />

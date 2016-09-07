@@ -45,6 +45,7 @@ youtube.APIKey = 'AIzaSyBWaFgKjAgeblkrWqWKPKeaKAhdbZvQTkE';
 app.use('/', routes);
 app.use('/api/users', users);
 app.use('/api/songs', songs);
+app.use('/api/playlists', playlists);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
